@@ -1,0 +1,32 @@
+<h2>Sneaker Brands</h2>
+<div class="flex">
+  <div *ngFor="let brand of brands" class="flex-1 flex align-items-center justify-content-center  text-gray-900 m-5 px-5 py-3 border-round">
+    <div class="card">
+      <a href="/sneakers">
+        <img src="assets/images/sneakers/logos/{{brand}}.jpg" style="width:168px"/>
+      </a>
+    </div>
+  </div>
+</div>
+<h2>Most Popular Sneakers</h2>
+<div class="flex">
+  <div *ngFor="let sneaker of mostPopular" class="flex-1 flex align-items-center justify-content-center  font-bold text-gray-900 m-5 px-5 py-3 border-round">
+    <div class="card">
+      <a href="/sneakers">
+        <img src="assets{{sneaker.image_path}}" style="width:168px"/>
+      </a>
+    </div>
+  </div>
+</div>
+<h2>Recently Released</h2>
+<div class="flex">
+  <div *ngFor="let sneaker of mostRecent" class="flex-1 flex align-items-center justify-content-center font-bold text-gray-900 m-5 px-5 py-3 border-round">
+    <div class="card">
+      <a href="/sneakers">
+        <img src="assets{{sneaker.image_path}}" style="width:168px"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+
