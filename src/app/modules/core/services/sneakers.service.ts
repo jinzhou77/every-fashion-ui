@@ -6,6 +6,7 @@ import { Sneaker } from '../../models/sneakers.model';
   providedIn: 'root'
 })
 export class SneakersService {
+  sneaker_URL = "http://localhost:8080/api/sneakers/?product_id="
   sneakers_URL = "http://localhost:8080/api/sneakers/"
   sneakers_popularity_URL = "http://localhost:8080/api/sneakers/?popularity=true"
   most_recent_released_URL = "http://localhost:8080/api/sneakers/?recent_release=true"
@@ -14,8 +15,12 @@ export class SneakersService {
   adidas_URL = "http://localhost:8080/api/sneakers/?brand=adidas"
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
+
+  getSneaker(id: string): Observable<Sneaker[]> {
+    return this.http.get<Sneaker[]>(this.sneaker_URL+id)
+  }
 
   getSneakers(): Observable<Sneaker[]> {
     return this.http.get<Sneaker[]>(this.sneakers_URL)

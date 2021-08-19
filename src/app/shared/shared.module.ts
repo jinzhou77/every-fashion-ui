@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchBarComponent, HeaderComponent, FooterComponent } from './index'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownComponent } from './components/dropdown/dropdown.component'
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToolbarModule} from 'primeng/toolbar';
@@ -10,13 +9,19 @@ import { ButtonModule } from 'primeng/button';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {CardModule} from 'primeng/card';
+import {DataViewModule} from 'primeng/dataview';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { SneakerDetailOverviewComponent } from './components/sneaker-detail-overview/sneaker-detail-overview.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
     SearchBarComponent,
     HeaderComponent,
     FooterComponent,
-    DropdownComponent
+    DropdownComponent,
+    SneakerDetailOverviewComponent
   ],
   imports: [
     CommonModule,
@@ -26,9 +31,12 @@ import {CardModule} from 'primeng/card';
     MenuModule,
     ButtonModule,
     AutoCompleteModule,
-    BrowserAnimationsModule,
     OverlayPanelModule,
-    CardModule
+    CardModule,
+    DataViewModule,
+    BreadcrumbModule,
+    ProgressSpinnerModule,
+    DropdownModule
   ],
   exports: [
     HeaderComponent,
@@ -38,7 +46,12 @@ import {CardModule} from 'primeng/card';
     ButtonModule,
     AutoCompleteModule,
     OverlayPanelModule,
-    CardModule
+    CardModule,
+    DataViewModule,
+    BreadcrumbModule,
+    ProgressSpinnerModule,
+    SneakerDetailOverviewComponent,
+    DropdownModule
   ]
 })
 export class SharedModule { }

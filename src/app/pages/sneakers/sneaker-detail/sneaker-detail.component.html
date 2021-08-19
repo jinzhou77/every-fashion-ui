@@ -1,0 +1,7 @@
+<div *ngIf="sneakerDataAvailable; else sneakerLoadComponent">
+  <p-breadcrumb [model]="items"></p-breadcrumb>
+  <app-sneaker-detail-overview [sneaker]="sneaker"></app-sneaker-detail-overview>
+</div>
+<ng-template #sneakerLoadComponent>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>

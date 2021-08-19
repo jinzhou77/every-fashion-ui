@@ -1,10 +1,12 @@
 
-  <p-autoComplete class="p-fluid surface-900" [(ngModel)]="selectedSneakerAdvanced" [suggestions]="filterSneakers"
-    (completeMethod)="filterSneaker($event)" field="name" [dropdown]="false" placeholder="Search...">
+  <p-autoComplete class="p-fluid surface-900" [(ngModel)]="selectedSneaker" [suggestions]="filterSneakers" (onSelect)="selectSneaker($event)"
+    (completeMethod)="filterSneaker($event)" field="style_name" [dropdown]="false" placeholder="Search...">
       <ng-template let-sneaker pTemplate="item">
         <div class="flex flex-row sneaker-item">
-          <img class="flex align-items-center justify-content-center m-2" src="assets/{{sneaker.image_path}}" style="width: 40px"/>
-          <div class="flex align-items-center justify-content-center m-2">{{sneaker.style_name}}</div>
+          <!-- <img class="flex align-items-center justify-content-center m-2" src="assets/{{sneaker.image_path}}" style="width: 40px"/> -->
+          <div class="flex align-items-center justify-content-center m-2">
+              {{sneaker.style_name}}
+          </div>
         </div>
       </ng-template>
   </p-autoComplete>

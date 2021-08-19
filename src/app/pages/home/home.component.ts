@@ -8,6 +8,8 @@ import { Sneaker } from 'src/app/modules/models/sneakers.model';
   providers: [SneakersService]
 })
 export class HomeComponent implements OnInit {
+  popularDataAvailable: boolean = false
+  recentDataAvailable: boolean = false
   brands:any[] = ['yeezy', 'nike', 'jordan', 'adidas'];
   mostPopular: Sneaker[] = [];
   mostRecent: Sneaker[] = [];
@@ -17,11 +19,13 @@ export class HomeComponent implements OnInit {
     this.sneakersService.getMostPopularSneakers()
     .subscribe((res: Sneaker[]) => {
       this.mostPopular = res;
+      this.popularDataAvailable = true
     })
 
     this.sneakersService.getMostRecentReleasedSneakers()
     .subscribe((res: Sneaker[]) => {
       this.mostRecent = res;
+      this.recentDataAvailable = true
     })
   }
 

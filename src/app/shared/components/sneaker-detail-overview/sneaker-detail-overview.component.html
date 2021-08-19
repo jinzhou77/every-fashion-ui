@@ -1,0 +1,34 @@
+<div class="grid m-0 mt-3 ">
+  <div class="col-12 md:col-6 lg:col-3 px-5 h-12rem flex align-items-center justify-content-center ">
+    <div class="sneaker-grid-item-contentflex align-items-center justify-content-center">
+      <img [src]="'assets' + sneaker.image_path" [alt]="sneaker.style_name" style="width:168px"/>
+    </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 px-5 h-12rem flex flex-column align-items-center justify-content-center ">
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <h3>Release Date:</h3>
+    </div>
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <span>{{sneaker.release_date}}</span>
+    </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3  px-5 h-12rem flex flex-column align-items-center justify-content-center">
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <h3>Retail Price:</h3>
+    </div>
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <span>${{sneaker.retail_price}}</span>
+    </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 px-5 h-12rem flex flex-column align-items-center justify-content-center">
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <h3>Size:</h3>
+    </div>
+    <div class="sneaker-grid-item-content flex align-items-center justify-content-center">
+      <p-dropdown [options]="sizes" [(ngModel)]="selectedCityCode" optionLabel="label" optionValue="value"></p-dropdown>
+    </div>
+  </div>
+</div>
+
+
+

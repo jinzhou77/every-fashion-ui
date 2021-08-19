@@ -24,22 +24,22 @@ export class DropdownComponent implements OnInit {
             {
               label: 'Nike',
               // icon: 'pi pi-external-link',
-              url: 'http://angular.io'
+              url: '/sneakers/nike'
             },
             {
               label: 'Adidas',
               // icon: 'pi pi-external-link',
-              url: 'http://angular.io'
+              url: '/sneakers/adidas'
             },
             {
               label: 'Yeezy',
               // icon: 'pi pi-external-link',
-              url: 'http://angular.io'
+              url: '/sneakers/yeezy'
             },
             {
               label: 'Air Jordan',
               // icon: 'pi pi-external-link',
-              url: 'http://angular.io'
+              url: '/sneakers/jordan'
             },
           ]
       }

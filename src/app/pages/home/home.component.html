@@ -1,5 +1,5 @@
 <h2>Sneaker Brands</h2>
-<div class="flex">
+<!-- <div class="flex">
   <div *ngFor="let brand of brands" class="flex-1 flex align-items-center justify-content-center  text-gray-900 m-5 px-5 py-3 border-round">
     <div class="card">
       <a href="/sneakers">
@@ -7,26 +7,69 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
+<p-dataView #dv [value]="brands" [paginator]="false" layout="grid">
+  <ng-template let-brand pTemplate="gridItem">
+    <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
+        <div class="product-grid-item card ">
+            <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
+              <a href="/sneakers/{{brand}}">
+                <img [src]="'assets/images/sneakers/logos/' + brand + '.jpg'" [alt]="brand" style="width:168px"/>
+              </a>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+</p-dataView>
 <h2>Most Popular Sneakers</h2>
-<div class="flex">
-  <div *ngFor="let sneaker of mostPopular" class="flex-1 flex align-items-center justify-content-center  font-bold text-gray-900 m-5 px-5 py-3 border-round">
-    <div class="card">
-      <a href="/sneakers">
-        <img src="assets{{sneaker.image_path}}" style="width:168px"/>
-      </a>
+<p-dataView *ngIf="popularDataAvailable; else popularLoadComponent" #dv [value]="mostPopular" [paginator]="false" layout="grid">
+  <ng-template let-sneaker pTemplate="gridItem">
+    <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
+        <div class="product-grid-item card ">
+            <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
+              <a [routerLink]="['/sneakers', sneaker.product_id]">
+                <img [src]="'assets' + sneaker.image_path" [alt]="sneaker.style_name" style="width:168px"/>
+              </a>
+            </div>
+            <div class="product-grid-item-bottom m-2 px-5 py-3">
+              <div class="text-lg font-semibold h-3rem">
+                <a [routerLink]="['/sneakers', sneaker.product_id]" class="no-underline text-900">
+                  {{sneaker.style_name}}
+                </a>
+              </div>
+              <div class="text-base font-medium text-500"># of Sales (72 hrs): {{sneaker.number_sales_72_hours}}</div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+  </ng-template>
+</p-dataView>
+<ng-template #popularLoadComponent>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>
+
+
 <h2>Recently Released</h2>
-<div class="flex">
-  <div *ngFor="let sneaker of mostRecent" class="flex-1 flex align-items-center justify-content-center font-bold text-gray-900 m-5 px-5 py-3 border-round">
-    <div class="card">
-      <a href="/sneakers">
-        <img src="assets{{sneaker.image_path}}" style="width:168px"/>
-      </a>
+<p-dataView *ngIf="recentDataAvailable; else recentLoadComponent" #dv [value]="mostRecent" [paginator]="false" layout="grid">
+  <ng-template let-sneaker pTemplate="gridItem">
+    <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
+        <div class="product-grid-item card ">
+            <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
+              <a [routerLink]="['/sneakers', sneaker.product_id]">
+                <img [src]="'assets' + sneaker.image_path" [alt]="sneaker.style_name" style="width:168px"/>
+              </a>
+            </div>
+            <div class="product-grid-item-bottom m-2 px-5 py-3">
+              <div class="text-lg font-semibold h-3rem">
+                <a [routerLink]="['/sneakers', sneaker.product_id]" class="no-underline text-900">
+                  {{sneaker.style_name}}
+                </a>
+              </div>
+              <div class="text-base font-medium text-500">Release: {{sneaker.release_date.substring(0,10)}}</div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-
+  </ng-template>
+</p-dataView>
+<ng-template #recentLoadComponent>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>

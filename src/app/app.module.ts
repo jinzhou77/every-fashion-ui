@@ -8,15 +8,14 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './pages/index';
-import { NikeComponent } from './pages/nike/nike.component';
-
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NikeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

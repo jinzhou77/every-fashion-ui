@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SneakersService } from 'src/app/modules/core/services/sneakers.service';
 import { Sneaker } from 'src/app/modules/models/sneakers.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,14 +12,14 @@ import { Sneaker } from 'src/app/modules/models/sneakers.model';
 export class SearchBarComponent implements OnInit {
 
   sneakers: Sneaker[];
-  selectedSneakerAdvanced: any[];
+  selectedSneaker: any;
   filterSneakers: any[];
 
   constructor(
     private sneakersService: SneakersService,
+    private router:Router
   ) {
     this.sneakers = []
-    this.selectedSneakerAdvanced = []
     this.filterSneakers = []
   }
 
@@ -40,6 +41,10 @@ export class SearchBarComponent implements OnInit {
     }
 
     this.filterSneakers = filtered;
+  }
+
+  selectSneaker(event: any) {
+    this.router.navigate(['/sneakers/'+ event.product_id])
   }
 
 }
