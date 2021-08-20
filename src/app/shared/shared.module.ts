@@ -14,6 +14,10 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { SneakerDetailOverviewComponent } from './components/sneaker-detail-overview/sneaker-detail-overview.component';
 import {DropdownModule} from 'primeng/dropdown';
+import {ChartModule} from 'primeng/chart';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import {DropdownModule} from 'primeng/dropdown';
     HeaderComponent,
     FooterComponent,
     DropdownComponent,
-    SneakerDetailOverviewComponent
+    SneakerDetailOverviewComponent,
+    BarChartComponent,
+    PieChartComponent,
+    LineChartComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +43,8 @@ import {DropdownModule} from 'primeng/dropdown';
     DataViewModule,
     BreadcrumbModule,
     ProgressSpinnerModule,
-    DropdownModule
+    DropdownModule,
+    ChartModule
   ],
   exports: [
     HeaderComponent,
@@ -51,7 +59,11 @@ import {DropdownModule} from 'primeng/dropdown';
     BreadcrumbModule,
     ProgressSpinnerModule,
     SneakerDetailOverviewComponent,
-    DropdownModule
+    DropdownModule,
+    ChartModule,
+    BarChartComponent,
+    PieChartComponent,
+    LineChartComponent,
   ]
 })
 export class SharedModule { }

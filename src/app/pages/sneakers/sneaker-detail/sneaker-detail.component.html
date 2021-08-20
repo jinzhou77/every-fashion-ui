@@ -1,6 +1,17 @@
 <div *ngIf="sneakerDataAvailable; else sneakerLoadComponent">
   <p-breadcrumb [model]="items"></p-breadcrumb>
   <app-sneaker-detail-overview [sneaker]="sneaker"></app-sneaker-detail-overview>
+  <div class="grid mx-0 my-5 py-5">
+    <div class="col-12 lg:col-6 flex flex-column align-items-center justify-content-center">
+      <h3 class="flex">Average Sales Price</h3>
+      <app-bar-chart class="w-full"></app-bar-chart>
+    </div>
+    <div class="col-12 lg:col-6 flex flex-column align-items-center justify-content-center">
+      <h3 class="flex">Number of Transactions (Last 30 days)</h3>
+      <app-pie-chart class=""></app-pie-chart>
+    </div>
+  </div>
+  <app-line-chart></app-line-chart>
 </div>
 <ng-template #sneakerLoadComponent>
   <p-progressSpinner></p-progressSpinner>

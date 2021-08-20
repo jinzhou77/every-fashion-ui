@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'nike', component: NikeComponent},
   { path: 'adidas', component: AdidasComponent},
   { path: 'yeezy', component: YeezyComponent},
-  { path: 'jordan', component: JordanComponent},
+  { path: 'air-jordan', component: JordanComponent},
   { path: ':id', component: SneakerDetailComponent}
 ];
 

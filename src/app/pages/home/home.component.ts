@@ -10,7 +10,7 @@ import { Sneaker } from 'src/app/modules/models/sneakers.model';
 export class HomeComponent implements OnInit {
   popularDataAvailable: boolean = false
   recentDataAvailable: boolean = false
-  brands:any[] = ['yeezy', 'nike', 'jordan', 'adidas'];
+  brands:any[] = ['yeezy', 'nike', 'air-jordan', 'adidas'];
   mostPopular: Sneaker[] = [];
   mostRecent: Sneaker[] = [];
   constructor(private sneakersService:SneakersService) {}

@@ -34,7 +34,7 @@ export class SneakerDetailComponent implements OnInit {
           },
           {
             label: this.sneaker.brand_name.toUpperCase(),
-            url: "/sneakers/" + this.sneaker.brand_name
+            url: "/sneakers/" + this.sneaker.brand_name.toLowerCase().replace(" ","-")
           },
           {
             label: this.sneaker.style_name.toUpperCase(),
