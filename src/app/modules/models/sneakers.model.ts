@@ -1,36 +1,52 @@
 import { Deserializable } from "src/app/shared/interfaces/deserializable.interface";
 
 export class Sneaker implements Deserializable{
-  product_id: string;
-  url: string;
-  brand_name: string;
-  style_name: string;
-  number_sales_72_hours: number;
-  ticker: string;
-  image_path: string;
-  release_date: string;
-  retail_price: string;
-  style_code: string;
-  colorway: string;
-  number_sales_12_months: number;
-  price_premium: string;
-  average_sales_price: string;
+  productId: string;
+  brand : string;
+  category : string;
+  shoe : string;
+  colorway : string;
+  gender : string;
+  imageUrl : string;
+  thumbUrl : string;
+  releaseDate : string;
+  belowRetail : boolean;
+  retailPrice : number;
+  styleId : string;
+  tickerSymbol: string;
+  urlKey : string;
+  title : string;
+  marketAnnualHigh : number;
+  marketAnnualLow : number;
+  marketSalesLast72Hours : number;
+  marketLowestAsk : number;
+  marketLowestAskSize : string;
+  marketHighestBid : number;
+  marketHighestBidSize : string;
 
   constructor(sneaker: any = {}) {
-    this.product_id = sneaker.id;
-    this.url = sneaker.name || '';
-    this.brand_name = sneaker.brand_name || '';
-    this.style_name = sneaker.style_name || '';
-    this.number_sales_72_hours = sneaker.number_sales_72_hours || 0;
-    this.ticker = sneaker.ticker || '';
-    this.image_path = sneaker.image_path || '';
-    this.release_date = sneaker.release_date || '';
-    this.retail_price = sneaker.retail_price;
-    this.style_code = sneaker.style_code;
-    this.colorway = sneaker.colorway;
-    this.number_sales_12_months = sneaker.number_sales_12_months;
-    this.price_premium = sneaker.price_premium;
-    this.average_sales_price = sneaker.average_sales_price;
+    this.productId = sneaker.productId;
+    this.brand = sneaker.brand || '';
+    this.category = sneaker.category || '';
+    this.shoe = sneaker.shoe || '';
+    this.colorway = sneaker.colorway || '';
+    this.gender = sneaker.gender || '';
+    this.imageUrl = sneaker.imageUrl || '';
+    this.thumbUrl = sneaker.thumbUrl || '';
+    this.releaseDate = sneaker.releaseDate || '';
+    this.belowRetail = sneaker.belowRetail || false;
+    this.retailPrice = sneaker.retailPrice;
+    this.styleId = sneaker.styleId || '';
+    this.tickerSymbol = sneaker.tickerSymbol || '';
+    this.urlKey = sneaker.urlKey || '';
+    this.title = sneaker.title || '';
+    this.marketAnnualHigh = sneaker.marketAnnualHigh;
+    this.marketAnnualLow = sneaker.marketAnnualLow;
+    this.marketSalesLast72Hours = sneaker.marketSalesLast72Hours;
+    this.marketLowestAsk = sneaker.marketLowestAsk;
+    this.marketLowestAskSize = sneaker.marketLowestAskSize || '';
+    this.marketHighestBid = sneaker.marketHighestBid;
+    this.marketHighestBidSize = sneaker.marketHighestBidSize || '';
   }
 
   deserialize(input: any) {

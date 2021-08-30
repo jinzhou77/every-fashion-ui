@@ -12,7 +12,7 @@
   <ng-template let-brand pTemplate="gridItem">
     <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
         <div class="product-grid-item card ">
-            <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
+            <div class="product-grid-item-content m-3 px-5 py-3 h-12rem flex align-items-center justify-content-center">
               <a href="/sneakers/{{brand}}">
                 <img [src]="'assets/images/sneakers/logos/' + brand + '.jpg'" [alt]="brand" style="width:168px"/>
               </a>
@@ -26,18 +26,18 @@
   <ng-template let-sneaker pTemplate="gridItem">
     <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
         <div class="product-grid-item card ">
-            <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
-              <a [routerLink]="['/sneakers', sneaker.product_id]">
-                <img [src]="'assets' + sneaker.image_path" [alt]="sneaker.style_name" style="width:168px"/>
+            <div class="product-grid-item-content m-3 px-5 py-3 h-12rem flex align-items-center justify-content-center">
+              <a [routerLink]="['/sneakers', sneaker.productId]">
+                <img [src]="sneaker.thumbUrl" style="width:168px"/>
               </a>
             </div>
             <div class="product-grid-item-bottom m-2 px-5 py-3">
               <div class="text-lg font-semibold h-3rem">
-                <a [routerLink]="['/sneakers', sneaker.product_id]" class="no-underline text-900">
-                  {{sneaker.style_name}}
+                <a [routerLink]="['/sneakers', sneaker.productId]" class="no-underline text-900">
+                  {{sneaker.title}}
                 </a>
               </div>
-              <div class="text-base font-medium text-500"># of Sales (72 hrs): {{sneaker.number_sales_72_hours}}</div>
+              <div class="text-base font-medium text-500"># of Sales (72 hrs): {{sneaker.marketSalesLast72Hours}}</div>
             </div>
         </div>
     </div>
@@ -54,17 +54,17 @@
     <div class="col-12 md:col-6 lg:col-3 flex align-items-center justify-content-center">
         <div class="product-grid-item card ">
             <div class="product-grid-item-content m-5 px-5 py-3 h-12rem flex align-items-center justify-content-center">
-              <a [routerLink]="['/sneakers', sneaker.product_id]">
-                <img [src]="'assets' + sneaker.image_path" [alt]="sneaker.style_name" style="width:168px"/>
+              <a [routerLink]="['/sneakers', sneaker.productId]">
+                <img [src]="sneaker.thumbUrl" style="width:168px"/>
               </a>
             </div>
             <div class="product-grid-item-bottom m-2 px-5 py-3">
               <div class="text-lg font-semibold h-3rem">
-                <a [routerLink]="['/sneakers', sneaker.product_id]" class="no-underline text-900">
-                  {{sneaker.style_name}}
+                <a [routerLink]="['/sneakers', sneaker.productId]" class="no-underline text-900">
+                  {{sneaker.title}}
                 </a>
               </div>
-              <div class="text-base font-medium text-500">Release: {{sneaker.release_date.substring(0,10)}}</div>
+              <div class="text-base font-medium text-500">Release: {{sneaker.releaseDate}}</div>
             </div>
         </div>
     </div>

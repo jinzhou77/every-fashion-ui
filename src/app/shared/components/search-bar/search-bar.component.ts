@@ -35,7 +35,7 @@ export class SearchBarComponent implements OnInit {
     let query = event.query;
     for (let i = 0; i < this.sneakers.length; i++) {
       let sneaker = this.sneakers[i];
-      if (sneaker.style_name.toLowerCase().indexOf(query.toLowerCase()) != -1) {
+      if (sneaker.title.toLowerCase().indexOf(query.toLowerCase()) != -1) {
         filtered.push(sneaker);
       }
     }

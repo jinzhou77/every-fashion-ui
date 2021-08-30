@@ -18,14 +18,9 @@ export class BarChartComponent implements OnInit {
       labels: ['StockX', 'Ebay'],
       datasets: [
           {
-              label: 'Average Sale Price (Last 72 hrs)',
-              backgroundColor: '#42A5F5',
-              data: [65.0, 90.5]
-          },
-          {
               label: 'Average Sale Price (Last 30 days)',
-              backgroundColor: '#FFA726',
-              data: [70, 90]
+              backgroundColor: '#66BB6A',
+              data: [500, 1250]
           }
       ]
     };

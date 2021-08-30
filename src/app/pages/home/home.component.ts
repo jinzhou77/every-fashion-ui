@@ -10,7 +10,7 @@ import { Sneaker } from 'src/app/modules/models/sneakers.model';
 export class HomeComponent implements OnInit {
   popularDataAvailable: boolean = false
   recentDataAvailable: boolean = false
-  brands:any[] = ['yeezy', 'nike', 'air-jordan', 'adidas'];
+  brands:any[] = ['yeezy', 'nike', 'jordan', 'adidas'];
   mostPopular: Sneaker[] = [];
   mostRecent: Sneaker[] = [];
   constructor(private sneakersService:SneakersService) {}
@@ -18,13 +18,17 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.sneakersService.getMostPopularSneakers()
     .subscribe((res: Sneaker[]) => {
-      this.mostPopular = res;
+      for(let i=0; i<4; i++){
+        this.mostPopular.push(res[i])
+      }
       this.popularDataAvailable = true
     })
 
     this.sneakersService.getMostRecentReleasedSneakers()
     .subscribe((res: Sneaker[]) => {
-      this.mostRecent = res;
+      for(let i=0; i<4; i++){
+        this.mostRecent.push(res[i])
+      }
       this.recentDataAvailable = true
     })
   }

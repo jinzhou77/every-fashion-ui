@@ -33,11 +33,11 @@ export class SneakerDetailComponent implements OnInit {
             url: "/sneakers"
           },
           {
-            label: this.sneaker.brand_name.toUpperCase(),
-            url: "/sneakers/" + this.sneaker.brand_name.toLowerCase().replace(" ","-")
+            label: this.sneaker.brand.toUpperCase(),
+            url: "/sneakers/" + this.sneaker.brand.toLowerCase()
           },
           {
-            label: this.sneaker.style_name.toUpperCase(),
+            label: this.sneaker.title.toUpperCase(),
             url: "/sneakers/" + this.sneaker.product_id
           }
         ]
