@@ -3,7 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 # How I collect data from StockX and Ebay
+
 https://github.com/jinzhou77/sneak-product-data
+
+# Backend Service (Django & Python & PostgreSQL)
+
+https://github.com/jinzhou77/sneakData-Backend
 
 # Product Page with Data Visualization
 
